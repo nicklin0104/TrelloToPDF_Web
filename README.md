@@ -17,7 +17,7 @@ A beautifully designed, premium web application that perfectly converts Trello J
 
 ### 🚀 Usage (GitHub Pages Ready)
 1. Export your Trello board: `Board Menu` > `More` > `Print and Export` > `Export as JSON`.
-2. Open the [TrelloToPDF Web App](#) (Replace `#` with your GitHub Pages URL after deployment).
+2. Open the [TrelloToPDF Web App](https://nicklin0104.github.io/TrelloToPDF_Web/)
 3. Drag & Drop your JSON file into the upload zone.
 4. Select the specific lists you want to export.
 5. Click **Generate PDF**, and use your browser's "Save as PDF" function on the print pop-up.
@@ -43,7 +43,7 @@ Since this is a static web app consisting only of HTML, CSS, and JS, no build st
 
 ### 🚀 使用方式 (支援 GitHub Pages)
 1. 在 Trello 開啟你的看板 -> 右側選單 -> 更多 -> 列印與匯出 -> **匯出為 JSON**。
-2. 開啟 [TrelloToPDF Web App](#) (部署後請替換為你的 GitHub Pages 網址)。
+2. 開啟 [TrelloToPDF Web App](https://nicklin0104.github.io/TrelloToPDF_Web/) 
 3. 將剛剛下載的 JSON 檔案拖曳進網頁的標誌性上傳區。
 4. 勾選你想要留下的列表。
 5. 點擊 **產生並預覽 PDF**，並在自動彈出的列印視窗中使用現代瀏覽器的「另存為 PDF」。
