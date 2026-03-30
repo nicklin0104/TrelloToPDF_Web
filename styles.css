@@ -1,0 +1,287 @@
+:root {
+    /* FIFA Argentina National Team Colors */
+    --afa-blue: #43A1D5;       /* Classic Sky Blue */
+    --afa-blue-hover: #3182B0;
+    --afa-white: #FFFFFF;
+    --afa-gold: #FFB81C;       /* Sun of May Gold */
+    --afa-black: #1C1C1C;      /* Typography & Accents */
+    
+    --bg-color: #f0f4f8;       /* App Background */
+    --text-primary: #1C1C1C;
+    --text-secondary: #5a6c7a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    /* Subtle Argentina Stripes Pattern */
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            var(--afa-white) 0%,
+            var(--afa-white) 50%,
+            rgba(67, 161, 213, 0.08) 50%,
+            rgba(67, 161, 213, 0.08) 100%
+        );
+    background-size: 100px 300px;
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Premium Glass / Solid App Container */
+.app-container {
+    background: var(--afa-white);
+    max-width: 800px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(67, 161, 213, 0.2);
+    overflow: hidden;
+}
+
+/* Argentina Hero Banner */
+.hero {
+    background: linear-gradient(135deg, #74ACDF 0%, var(--afa-blue) 100%);
+    color: var(--afa-white);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    position: relative;
+    border-bottom: 6px solid var(--afa-gold);
+}
+
+.sun-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    animation: rotate-sun 25s linear infinite;
+    display: inline-block;
+}
+
+@keyframes rotate-sun {
+    100% { transform: rotate(360deg); }
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.95;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f8f9fa;
+}
+
+main {
+    padding: 2.5rem 2rem;
+}
+
+/* Visibility toggling */
+.card {
+    display: none;
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.card.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: var(--afa-blue);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    border-bottom: 3px solid var(--afa-gold);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.board-name {
+    font-size: 1.3rem;
+    color: var(--afa-black);
+    margin-bottom: 1.2rem;
+    padding: 12px 16px;
+    background: #f8fcfd;
+    border-left: 5px solid var(--afa-gold);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Interactive Drag and Drop area */
+.drop-zone {
+    border: 3px dashed var(--afa-blue);
+    border-radius: 12px;
+    padding: 4rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(67, 161, 213, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-zone:hover, .drop-zone.dragover {
+    background: rgba(67, 161, 213, 0.1);
+    border-color: var(--afa-blue-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(67, 161, 213, 0.1);
+}
+
+.drop-zone .icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.drop-zone p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--afa-blue);
+}
+
+.drop-zone .subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+/* Checkboxes grid */
+.lists-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #e1e8ed;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.list-item:hover {
+    border-color: var(--afa-blue);
+    box-shadow: 0 4px 12px rgba(67, 161, 213, 0.15);
+}
+
+.list-item input[type="checkbox"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--afa-blue);
+    cursor: pointer;
+}
+
+.list-item span {
+    font-weight: 600;
+    font-size: 1.05rem;
+    user-select: none;
+    color: var(--text-primary);
+}
+
+/* Navigation buttons */
+.controls {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e8eef2;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Primary Button (AFA Blue Theme) */
+.btn-primary {
+    background: var(--afa-blue);
+    color: var(--afa-white);
+    font-size: 1.15rem;
+    box-shadow: 0 4px 15px rgba(67, 161, 213, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--afa-blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 161, 213, 0.5);
+}
+
+/* Secondary Button (AFA Black Theme) */
+.btn-secondary {
+    background: var(--afa-black);
+    color: var(--afa-white);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+    background: #333333;
+}
+
+/* Text Button */
+.btn-text {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-text:hover {
+    color: var(--afa-blue);
+    text-decoration: underline;
+}
+
+/* Custom Webkit Scrollbar */
+.lists-container::-webkit-scrollbar {
+    width: 8px;
+}
+.lists-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.lists-container::-webkit-scrollbar-thumb {
+    background: var(--afa-blue);
+    border-radius: 4px;
+}
+.lists-container::-webkit-scrollbar-thumb:hover {
+    background: var(--afa-blue-hover);
+}
